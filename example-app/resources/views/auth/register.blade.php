@@ -6,19 +6,21 @@
       </div>
       <div class="row clearfix">
 
-          <form action="/login" method="POST">
+          <form action="/register" method="POST">
             @csrf
             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
                 <input type="username" name="username" placeholder="Username" required />
               </div>
             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                {{ $errors->first('email')}}
               <input type="email" name="email" placeholder="Email" required />
             </div>
             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                {{ $errors->first('password')}}
               <input type="password" name="password" placeholder="Password" required />
             </div>
             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-              <input type="password" name="password" placeholder="Re-type Password" required />
+              <input type="password" name="password_confirmation" placeholder="Re-type Password" required />
             </div>
 
               <div class="input_field checkbox_option">

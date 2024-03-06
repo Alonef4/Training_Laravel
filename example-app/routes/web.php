@@ -19,7 +19,7 @@ Route::get("/",function(){
     return redirect("/main");
 });
 
-Route::resource("/main",crudController::class);
+Route::resource("/main",crudController::class)->middleware("auth");
 
 Route::get("/register",[userController::class,"register_view"]);
 Route::post("/register",[userController::class,"register_store"]);

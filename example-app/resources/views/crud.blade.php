@@ -27,6 +27,7 @@ $(document).ready(function(){
                 <div class="row">
                     <div class="col-sm-8"><h2>Customer <b>Details</b></h2></div>
                     <div class="col-sm-4">
+                            <a href="/logout"><button type="button" class="btn btn-info add-new btn-danger"><i class=""></i> Logout</button></a>
                             <a href="/main/create"><button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button></a>
                             {{-- <a href="/logout"><button class="logout-btn btn-danger">LOGOUT</button></a> --}}
                     </div>

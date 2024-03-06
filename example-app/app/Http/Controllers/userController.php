@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Auth\User;
+use App\Models\customerModel;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
@@ -22,9 +23,9 @@ class userController extends Controller
             "password" => "min:6|confirmed"
         ]);
         $data = $request -> all();
-        // User::create($data);
-        return view("auth.login",compact("data"));
-        // return redirect("/login");
+
+        User::create($data);
+        return redirect("/login");
     }
 
     public function login_auth(Request $request){
@@ -34,7 +35,7 @@ class userController extends Controller
         ]);
         $data = $request -> all();
         if(Auth::attempt(["email" => $data["email"], "password" => $data["password"]]) ){
-            return redirect("/customers");
+            return redirect("/main");
         }else{
             return redirect("/login");
         }

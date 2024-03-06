@@ -6,8 +6,8 @@
       </div>
       <div class="row clearfix">
 
-        <?php print_r $data?>
-          <form action="/register" method="POST">
+
+          <form action="/login" method="POST">
             @csrf
             <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
               <input type="email" name="email" placeholder="Email" required />
